@@ -15,7 +15,7 @@ export default function Ask() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="row" onSubmit={handleSubmit}>
       <input name="question" required maxLength={2000} placeholder="Ask something" aria-label="Question" />
       <button type="submit" disabled={busy}>{busy ? "Asking..." : "Ask"}</button>
       {answer && <p className="answer">{answer}</p>}

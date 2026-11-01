@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 // Posts to Netlify Forms. The form name and fields must match the hidden form in index.html.
-export default function Waitlist() {
+export default function Waitlist({ classSlug }) {
   const [status, setStatus] = useState("idle");
 
   async function handleSubmit(event) {
@@ -14,10 +14,11 @@ export default function Waitlist() {
     setStatus(res.ok ? "done" : "error");
   }
 
-  if (status === "done") return <p>You're on the list.</p>;
+  if (status === "done") return <p className="done">You're on the waitlist. We'll email you if a place opens.</p>;
   return (
-    <form name="waitlist" onSubmit={handleSubmit}>
+    <form name="waitlist" className="row" onSubmit={handleSubmit}>
       <input type="hidden" name="form-name" value="waitlist" />
+      <input type="hidden" name="class" value={classSlug} />
       <p hidden><input name="bot-field" /></p>
       <input type="email" name="email" required placeholder="you@example.com" aria-label="Email" />
       <button type="submit">Join the waitlist</button>
