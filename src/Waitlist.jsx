@@ -14,14 +14,14 @@ export default function Waitlist() {
     setStatus(res.ok ? "done" : "error");
   }
 
-  if (status === "done") return <p>You're on the list.</p>;
+  if (status === "done") return <p className="done" role="status">You're on the list. One email when Pro opens, nothing else.</p>;
   return (
-    <form name="waitlist" onSubmit={handleSubmit}>
+    <form name="waitlist" className="waitlist" onSubmit={handleSubmit}>
       <input type="hidden" name="form-name" value="waitlist" />
       <p hidden><input name="bot-field" /></p>
       <input type="email" name="email" required placeholder="you@example.com" aria-label="Email" />
       <button type="submit">Join the waitlist</button>
-      {status === "error" && <p>That didn't go through. Try again in a minute.</p>}
+      {status === "error" && <p className="note">That didn't go through. Try again in a minute.</p>}
     </form>
   );
 }
