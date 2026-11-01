@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>My AI-built app</title>
+  </head>
+  <body>
+    <!-- Netlify Forms reads this hidden copy at deploy time. Keep its fields in sync with src/Waitlist.jsx. -->
+    <form name="waitlist" netlify netlify-honeypot="bot-field" hidden>
+      <input type="email" name="email" />
+      <input name="bot-field" />
+    </form>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
