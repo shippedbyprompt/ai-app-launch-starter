@@ -9,7 +9,7 @@ export default function Ask() {
     event.preventDefault();
     setBusy(true);
     const question = new FormData(event.target).get("question");
-    const res = await fetch("/.netlify/functions/ask", { method: "POST", body: JSON.stringify({ question }) });
+    const res = await fetch("/api/ask", { method: "POST", body: JSON.stringify({ question }) });
     setAnswer(res.ok ? (await res.json()).answer : await res.text());
     setBusy(false);
   }
