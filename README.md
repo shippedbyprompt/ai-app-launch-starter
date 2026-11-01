@@ -6,7 +6,7 @@ A small Vite + React app with the three things AI-built apps most often get wron
 2. **A waitlist form that actually arrives.** Netlify Forms with a hidden static copy in `index.html` and a URL-encoded post from React. [Why](https://shippedbyprompt.com/guides/netlify-forms-in-react/)
 3. **An AI feature without exposing the key.** `netlify/functions/ask.mjs` calls the model on the server and reads `OPENAI_API_KEY` from Netlify's environment variables. [Why](https://shippedbyprompt.com/guides/keep-api-keys-safe/)
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/hoangdao98/ai-app-launch-starter)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/shippedbyprompt/ai-app-launch-starter)
 
 ## Use it with your own app
 
