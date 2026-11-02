@@ -75,6 +75,10 @@ function NotFound() {
     <section className="examples">
       <h1>Page not found</h1>
       <p className="lede">Gist has no page at this address. <a href="/">Go back to Try it</a>.</p>
+      <p className="route-note">
+        This is the app's own page for an address that doesn't exist. Netlify's "Page not found" error never shows,
+        because <code>public/_redirects</code> hands every address to the app, and the app decides what to show.
+      </p>
     </section>
   );
 }
