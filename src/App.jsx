@@ -70,6 +70,15 @@ function Home() {
   );
 }
 
+function NotFound() {
+  return (
+    <section className="examples">
+      <h1>Page not found</h1>
+      <p className="lede">Gist has no page at this address. <a href="/">Go back to Try it</a>.</p>
+    </section>
+  );
+}
+
 function Examples({ path }) {
   return (
     <section className="examples">
@@ -95,6 +104,7 @@ function Examples({ path }) {
 export default function App() {
   const path = window.location.pathname;
   const home = path === "/";
+  const onExamples = path.replace(/\/$/, "") === "/examples";
   return (
     <>
       <p className="starter-bar">
@@ -104,12 +114,12 @@ export default function App() {
         <a href="/" className="wordmark">Gist</a>
         <nav aria-label="Main">
           <a href="/" aria-current={home ? "page" : undefined}>Try it</a>
-          <a href="/examples" aria-current={home ? undefined : "page"}>Examples</a>
+          <a href="/examples" aria-current={onExamples ? "page" : undefined}>Examples</a>
         </nav>
       </header>
-      <main>{home ? <Home /> : <Examples path={path} />}</main>
+      <main>{home ? <Home /> : onExamples ? <Examples path={path} /> : <NotFound />}</main>
       <footer className="site-footer">
-        <p>Gist is a made-up product. The waitlist, the AI box and the routes are real and run on Netlify.</p>
+        <p>Gist is a made-up product. The routes and the waitlist run on Netlify; the AI box answers in sample mode until you add your own key.</p>
       </footer>
     </>
   );

@@ -14,13 +14,14 @@ export default function Waitlist() {
     setStatus(res.ok ? "done" : "error");
   }
 
-  if (status === "done") return <p className="done" role="status">You're on the list. One email when Pro opens, nothing else.</p>;
+  if (status === "done") return <p className="done" role="status">You're on the list. This is a demo: your entry lands in the starter's Netlify Forms page, and nobody emails you.</p>;
   return (
     <form name="waitlist" className="waitlist" onSubmit={handleSubmit}>
       <input type="hidden" name="form-name" value="waitlist" />
       <p hidden><input name="bot-field" /></p>
       <input type="email" name="email" required placeholder="you@example.com" aria-label="Email" />
       <button type="submit">Join the waitlist</button>
+      <p className="note waitlist-hint">Demo form. Entries show up under Forms in the Netlify dashboard.</p>
       {status === "error" && <p className="note">That didn't go through. Try again in a minute.</p>}
     </form>
   );

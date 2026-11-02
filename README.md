@@ -24,7 +24,7 @@ Or paste this into Lovable or Bolt: "Add a file public/_redirects containing /* 
 ## After deploying
 
 - **Forms:** open your project's Forms page on Netlify, select **Enable form detection**, then trigger a redeploy (Deploys > Trigger deploy). New projects start with detection off. After that, submit the waitlist once on the live site and check the Forms page.
-- **AI feature:** add `OPENAI_API_KEY` under Project configuration > Environment variables (no `VITE_` prefix), then redeploy. Also set a monthly spend limit in your AI provider's dashboard.
+- **AI feature:** until you add a key, the AI box answers in sample mode (a simple rule picks the lines that ask for something). For real answers, add `OPENAI_API_KEY` under Project configuration > Environment variables (no `VITE_` prefix), then redeploy. Also set a monthly spend limit in your AI provider's dashboard.
 
 ## Run locally
 
